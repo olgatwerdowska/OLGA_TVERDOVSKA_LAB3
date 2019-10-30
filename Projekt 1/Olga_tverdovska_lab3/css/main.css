@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  background-image: url(../img/michael-mongin-eUMf3CaUUho-unsplash.jpg);
+  height: 100vh;
+  background-size: cover; }
+  body h1 {
+    font-family: "Kaushan Script", cursive;
+    text-align: center;
+    color: white;
+    font-size: 85px;
+    text-transform: uppercase;
+    margin: 0;
+    padding-top: 175px;
+    padding-bottom: 25px; }
+
+.keys {
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+  margin-top: 45px; }
+
+.key {
+  border: 1px solid white;
+  margin: 8px;
+  text-align: center;
+  display: inline-block;
+  width: 80px;
+  padding: 10px 0;
+  border-radius: 5px;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  cursor: pointer; }
+  .key kbd {
+    display: block;
+    color: white;
+    font-size: 36px; }
+
+.sound {
+  color: white;
+  font-size: 15px; }
+
+.playing {
+  border: 1px solid green; }
+
+.create {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .create-song {
+    margin: 10px;
+    border: 1px solid white;
+    padding: 10px; }
+    .create-song h2 {
+      color: white;
+      text-align: center; }
+    .create-song-start {
+      background-color: rgba(0, 128, 0, 0.5);
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      color: white;
+      margin: 5px;
+      display: block;
+      width: 100%; }
+    .create-song-stop {
+      background-color: rgba(255, 0, 0, 0.5);
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      color: white;
+      margin: 5px;
+      display: block;
+      width: 100%; }
+    .create-song-play {
+      background-color: rgba(255, 255, 0, 0.5);
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      color: white;
+      margin: 5px;
+      display: block;
+      width: 100%; }
