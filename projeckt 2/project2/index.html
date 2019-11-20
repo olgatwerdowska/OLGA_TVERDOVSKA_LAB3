@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-1 tools">
+                <h4 class="title">Settings</h4>
+                <input type="button" value="Clear" id="clear-canvas" class="clear">
+                <label class="custom-file" id="customFile">
+                    <input type="file" class="custom-file-input" id="img-file" aria-describedby="fileHelp">
+                    <span class="custom-file-control form-control-file file">Img</span>
+                </label>
+                <div class="canvas-size">
+                    <lanbel class="title">Width : </lanbel>
+                    <input id="canvas-width" type="number" value="800" min="0"
+                        class="canvas-width form-control form-control-sm">
+                    <lanbel class="title">Height : </lanbel>
+                    <input id="canvas-height" type="number" value="480" min="0"
+                        class="canvas-height form-control form-control-sm">
+                </div>
+                <div class="mouse-position">
+                    <label>MouseX : </label>
+                    <label id="mouseX">0</label>
+                    <label>MouseY : </label>
+                    <label id="mouseY">0</label>
+                </div>
+                <div class="tools-img">
+                    <img id="spray" src="img/icons8-заполненный-круг-50.png" width="24px" height="24px" alt="">
+                    <img id="pencil" src="img/icons8-пустой-чекбокс-24.png" alt="">
+                    <img id="eraser" src="img/icons8-ластик-24.png" alt="">
+                </div>
+                <div class="tool-size">
+                    <details open>
+                        <summary>Size</summary>
+                        <ul>
+                            <li id="small">Small</li>
+                            <li id="middle">Middle</li>
+                            <li id="big">Big</li>
+                        </ul>
+                    </details>
+                </div>
+                <div id="color" class="color">
+                    <input type="color">
+                </div>
+            </div>
+            <div class="col-10 canvases">
+                <canvas id="back-canvas" width="800" height="480"></canvas>
+                <canvas id="front-canvas" width="800" height="480"></canvas>
+            </div>
+            <div class="col-1 properties-image">
+                <div id="properties">
+                        <h4 class="title">Image</h4>
+                        <label>Width : </label><input type="number" min="10" id="img-width" value="100" class="canvas-width form-control form-control-sm">
+                        <label>Height : </label><input type="number" min="10" id="img-height" value="100" class="canvas-width form-control form-control-sm">
+                        <label>Sepia</label><input type="range" id="sepia" min="0" max="100" step="20" class="form-control-range">
+                        <label>Contrast</label><input type="range" id="contrast" min="20" max="200" step="20" class="form-control-range">
+                        <label>Blur</label><input type="range" id="blur" min="0" max="10" step="2" class="form-control-range">
+                        <label>Grayscale</label><input type="range" id="grayscale" min="0" max="100" step="20"class="form-control-range">
+                        <label>Brightness</label><input type="range" id="brightness" min="0" max="200" step="40"class="form-control-range">
+                        <input type="button" value="Invert" id="invert" class="clear" class="form-control-range">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
