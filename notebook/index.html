@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="sass/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container">
+            <a class="navbar-brand text-danger" href="#">Your online notebook</a>
+            <form class="form-inline" action="/action_page.php">
+                <input class="form-control mr-sm-2 search" type="text" placeholder="Search" id="text-to-find" >
+                <button class="btn btn-danger search-btn"onclick="javascript: FindOnPage('text-to-find'); return false;" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row note-menu">
+            <div class="col-4 note-create">
+                <h1 class="title">Create your note</h1>
+                <form>
+                    <div class="input-group mb-3 input-group-sm">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Title</span>
+                        </div>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                </form>
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+                <form>
+                    <div class="input-group mb-3 input-group-sm datalist">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Color</span>
+                        </div>
+                        <input list="encodings" value="" class="form-control" id="datalist-input">
+                        <datalist id="encodings">
+                            <option value="Red">Red</option>
+                            <option value="Green">Green</option>
+                            <option value="Blue">Blue</option>
+                        </datalist>
+                    </div>
+                </form>
+                <button type="button" class="btn btn-light note-btn" id="create">Creatr</button>
+            </div>
+            <div class="col-7 not-active note-holder" id="skroll">
+                <div class="row pinned">
+                    <div class="col-4" id="pinnred"></div>
+                    <div class="col-4" id="pinngreen"></div>
+                    <div class="col-4" id="pinnblue"></div>
+                </div>
+                <div class="row">
+                    <div class="col-4" id="colred">
+
+                    </div>
+                    <div class="col-4" id="colgreen">
+
+                    </div>
+                    <div class="col-4" id="colblue">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+        var lastResFind = ""; // последний удачный результат
+        var copy_page = ""; // копия страницы в ихсодном виде
+        function TrimStr(s) {
+            s = s.replace(/^\s+/g, '');
+
+            return s.replace(/\s+$/g, '');
+
+        }
+
+        function FindOnPage(inputId) { //ищет текст на странице, в параметр передается ID поля для ввода
+
+            var obj = window.document.getElementById(inputId);
+
+            var textToFind;
+
+
+
+            if (obj) {
+
+                textToFind = TrimStr(obj.value); //обрезаем пробелы
+
+            } else {
+
+                alert("Введенная фраза не найдена");
+
+            }
+
+            if (textToFind == "") {
+
+                alert("Вы ничего не ввели");
+
+                return;
+
+            }
+
+
+
+            if (textToFind.length < 2) {
+
+                alert("Слишком короткий текст")
+
+                return;
+
+            }
+
+
+
+            if (copy_page.length > 0)
+
+                document.body.innerHTML = copy_page;
+            else copy_page = document.body.innerHTML;
+
+
+            document.body.innerHTML = document.body.innerHTML.replace(eval("/name=" + lastResFind + "/gi"),
+            " "); //стираем предыдущие якори для скрола
+
+            document.body.innerHTML = document.body.innerHTML.replace(eval("/" + textToFind + "/gi"), "<a name=" +
+                textToFind + " style='background:yellow; font-size:15px'>" + textToFind + "</a>"
+                ); //Заменяем найденный текст ссылками с якорем;
+
+            lastResFind = textToFind; // сохраняем фразу для поиска, чтобы в дальнейшем по ней стереть все ссылки
+
+            window.location = '#' + textToFind; //перемещаем скрол к последнему найденному совпадению
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>

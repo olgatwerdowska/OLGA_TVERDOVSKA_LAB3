@@ -1,0 +1,159 @@
+body {
+  height: 100vh;
+}
+
+.note-create {
+  background-color: #dc3545;
+  padding: 50px 30px;
+  margin-top: 10%;
+  border-radius: 20px;
+}
+
+.title {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.datalist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#datalist-input {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.form-check-label {
+  color: white;
+  margin: 0 5px;
+}
+
+.note-btn {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.note-holder {
+  padding: 20px 30px;
+  margin-top: 10%;
+  border-radius: 20px;
+  height: 440px;
+  margin-left: 80px;
+  overflow-y: auto;
+}
+
+#skroll::-webkit-scrollbar {
+  width: 15px;
+  background-color: #F5F5F5;
+}
+
+#skroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+#skroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #dc3545;
+  border: 1px solid #aaa;
+}
+
+#skroll::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+#skroll::-webkit-scrollbar-thumb:active {
+  background: #dc3545;
+}
+
+.note-container-red {
+  background-color: #981d26;
+  padding: 20px 10px;
+  border-radius: 20px;
+  display: block;
+  margin: 10px 0;
+}
+
+.note-container-blue {
+  background-color: #272745;
+  padding: 20px 10px;
+  border-radius: 20px;
+  display: block;
+  margin: 10px 0;
+}
+
+.note-container-green {
+  background-color: #043927;
+  padding: 20px 10px;
+  border-radius: 20px;
+  display: block;
+  margin: 10px 0;
+}
+
+.note-container {
+  width: 28%;
+  display: inline-block;
+  margin: 10px;
+}
+
+.note-title {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.note-content {
+  color: white;
+  font-size: 15px;
+}
+
+.data {
+  color: white;
+}
+
+.remove-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+.pinn-btn {
+  float: right;
+}
+
+.pinn-btn img {
+  width: 10px;
+  height: 10px;
+}
+
+.color-one {
+  background-color: #272745;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.color-too {
+  background-color: #043927;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.color-three {
+  background-color: #981d26;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.pinned {
+  border: 2px solid #dc3545;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,37 @@
+/*
+Error: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 4 spaces.
+        on line 32 of D:\gam\notebook\sass\main.sass
+
+27:     border-radius: 20px
+28:     height: 440px
+29:     margin-left: 80px
+30:     overflow-y: auto
+31: #skroll::-webkit-scrollbar 
+32: 	width: 15px
+33: 	background-color: #F5F5F5
+34: 
+35: #skroll::-webkit-scrollbar-track 
+36:   border-radius: 10px
+37:   background: rgba(0,0,0,0.1)
+
+Backtrace:
+D:\gam\notebook\sass\main.sass:32
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:494:in `block in tabulate'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:452:in `each'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:452:in `each_with_index'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:452:in `tabulate'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:417:in `_to_tree'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
+C:/Program Files (x86)/Koala/bin/sass:22:in `load'
+C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 4 spaces.\A         on line 32 of D:\gam\notebook\sass\main.sass\A \A 27:     border-radius: 20px\A 28:     height: 440px\A 29:     margin-left: 80px\A 30:     overflow-y: auto\A 31: #skroll::-webkit-scrollbar \A 32: 	width: 15px\A 33: 	background-color: #F5F5F5\A 34: \A 35: #skroll::-webkit-scrollbar-track \A 36:   border-radius: 10px\A 37:   background: rgba(0,0,0,0.1)"; }
