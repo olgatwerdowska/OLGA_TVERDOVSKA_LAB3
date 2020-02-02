@@ -1,0 +1,73 @@
+.canvasHolder {
+  height: 100vh ;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgb(49, 196, 68) ;
+  background-color: rgb(43, 194, 43);
+}
+canvas{
+  border: 3px solid rgb(108, 101, 126) ;
+  background-color: white;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.gameover{
+  display: none;
+  border: 3px solid yellowgreen;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+}
+
+.win{
+  display: none;
+  border: 3px solid yellowgreen;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+}
+
+.icon{
+  display: flex;
+  justify-content: center;
+}
+.again{
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 7px;
+  padding: 5px 15px;
+  background-color: green;
+  color: white;
+  border: none;
+  font-family: 'Sigmar One', cursive;
+  outline: none;
+}
+.box{
+  display: block;
+}
+
+.gameovertitle{
+  color: #35495e;
+  font-family: 'Muli', sans-serif;
+  margin: 5px 0;
+}
+
+p{
+  color: #35495e;
+  font-family: 'Muli', sans-serif;
+}
+
+.count{
+  margin: 5px 0;
+  text-align: center;
+}
+
+.time{
+  margin: 5px 0;
+  text-align: center;
+}
